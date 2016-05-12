@@ -18,23 +18,26 @@ github-create() {
  invalid_credentials=1
  fi
 
-# token=`git config github.token`
-# if [ "$token" = "" ]; then
-# echo "Could not find token, run 'git config --global github.token <token>'"
-# invalid_credentials=1
-# fi
+ token=`git config github.token`
+ if [ "$token" = "" ]; then
+ echo "Could not find token, run 'git config --global github.token <token>'"
+ invalid_credentials=1
+ fi
 
  if [ "$invalid_credentials" == "1" ]; then
  return 1
  fi
 
  echo -n "Creating Github repository '$repo_name' ..."
- curl -u "$username:$token" https://api.github.com/user/repos -d '{"name":"'$repo_name'"}' > /dev/null 2>&1
+ #curl -u "$username:$token" https://api.github.com/user/repos -d '{"name":"'$repo_name'"}' > /dev/null 2>&1
+ curl -u "$username:$token" https://api.github.com/user/repos -d '{"name":"'$repo_name'"}'
  echo " done."
 
  echo -n "Pushing local code to remote ..."
- git remote add origin git@github.com:$username/$repo_name.git > /dev/null 2>&1
- git push -u origin master > /dev/null 2>&1
+ #git remote add origin git@github.com:$username/$repo_name.git > /dev/null 2>&1
+ git remote add origin git@github.com:$username/$repo_name.git
+ #git push -u origin master > /dev/null 2>&1
+ git push -u origin master
  echo " done."
 }
 github-create
