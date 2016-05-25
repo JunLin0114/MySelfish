@@ -10,10 +10,9 @@ function __promptline_host {
 }
 
 function __promptline_user {
-  local only_if_ssh="0"
-
+  local only_if_ssh="3"
   if [ ! $only_if_ssh -o -n "${SSH_CLIENT}" ]; then
-    if [[ -n ${ZSH_VERSION-} ]]; then print %n; elif [[ -n ${FISH_VERSION-} ]]; then username -s; else printf "%s" \\u; fi
+    if [[ -n ${ZSH_VERSION-} ]]; then print %n; elif [[ -n ${FISH_VERSION-} ]]; then username -s; else printf "%s " \\u; fi
   fi
 }
 function __promptline_last_exit_code {
@@ -61,7 +60,7 @@ function __promptline_ps1 {
 }
 function __promptline_vcs_branch {
   local branch
-  local branch_symbol=" "
+  local branch_symbol="  "
 
   # git
   if hash git 2>/dev/null; then
@@ -79,7 +78,8 @@ function __promptline_cwd {
   local first_char
   local part_count=0
   local formatted_cwd=""
-  local dir_sep=" ╱ "
+  #local dir_sep="╱"
+  local dir_sep="  "
   local tilde="~"
 
   local cwd="${PWD/#$HOME/$tilde}"
@@ -164,31 +164,35 @@ function __promptline {
     local noprint='\[' end_noprint='\]'
   fi
   local wrap="$noprint$esc" end_wrap="$end_esc$end_noprint"
-  local space=" "
+  local space=""
   #local sep="1"
   local sep=""
   local rsep=""
   local alt_sep=""
   local alt_rsep=""
-  local git_alt_sep="|"
+  #local git_alt_sep="☘"
+  local git_alt_sep=" ⚷ "
+  #local git_alt_sep="|"
   local alt_sep="w"
   local reset="${wrap}0${end_wrap}"
   local reset_bg="${wrap}49${end_wrap}"
   local a_fg="${wrap}38;5;220${end_wrap}"
   local a_bg="${wrap}48;5;166${end_wrap}"
   local a_sep_fg="${wrap}38;5;166${end_wrap}"
-  local b_fg="${wrap}38;5;231${end_wrap}"
-  local b_bg="${wrap}48;5;31${end_wrap}"
-  local b_sep_fg="${wrap}38;5;31${end_wrap}"
-  local c_fg="${wrap}38;5;150${end_wrap}"
-  local c_bg="${wrap}48;5;238${end_wrap}"
-  local c_sep_fg="${wrap}38;5;238${end_wrap}"
+  local b_fg="${wrap}38;5;231;1${end_wrap}"
+  #local b_bg="${wrap}48;5;111${end_wrap}"
+  #local b_sep_fg="${wrap}38;5;111${end_wrap}"
+  local b_bg="${wrap}48;5;26${end_wrap}"
+  local b_sep_fg="${wrap}38;5;26${end_wrap}"
+  local c_fg="${wrap}38;5;255${end_wrap}"
+  local c_bg="${wrap}48;5;30${end_wrap}"
+  local c_sep_fg="${wrap}38;5;30${end_wrap}"
   local warn_fg="${wrap}38;5;231${end_wrap}"
   local warn_bg="${wrap}48;5;52${end_wrap}"
   local warn_sep_fg="${wrap}38;5;52${end_wrap}"
-  local y_fg="${wrap}38;5;250${end_wrap}"
-  local y_bg="${wrap}48;5;236${end_wrap}"
-  local y_sep_fg="${wrap}38;5;236${end_wrap}"
+  local y_fg="${wrap}38;5;255;0${end_wrap}"
+  local y_bg="${wrap}48;5;239${end_wrap}"
+  local y_sep_fg="${wrap}38;5;239${end_wrap}"
   if [[ -n ${ZSH_VERSION-} ]]; then
     PROMPT="$(__promptline_left_prompt)"
     RPROMPT="$(__promptline_right_prompt)"
