@@ -1,0 +1,10 @@
+#!/bin/bash
+DEV=/dev/pts/29
+for i in {1..50}
+do
+    sleep 0.5
+    echo "version" > ${DEV}
+    echo "powerinfo" > ${DEV}  
+#    sleep 0.5
+    echo "powerindebug" > ${DEV}
+done

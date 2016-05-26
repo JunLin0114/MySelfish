@@ -1,0 +1,2 @@
+#!/bin/sh
+sudo servod --vendor 0x18D1 --product 0x5002 &

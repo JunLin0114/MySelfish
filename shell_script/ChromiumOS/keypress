@@ -1,0 +1,74 @@
+#!/bin/bash
+TIME=0.3
+DEV=/dev/pts/29
+echo "kbpress 11 4 1" > ${DEV}
+echo "kbpress 11 4 0" > ${DEV}
+echo "kbpress 0 2 1" > ${DEV}
+echo "kbpress 10 6 1" > ${DEV}
+echo "kbpress 2 3 1" > ${DEV}
+echo "kbpress 2 3 0" > ${DEV}
+echo "kbpress 10 6 0" > ${DEV}
+echo "kbpress 0 2 0" > ${DEV}
+sleep 3
+echo "kbpress 3 7 1" > ${DEV}
+echo "kbpress 3 7 0" > ${DEV}
+sleep ${TIME}
+echo "kbpress 9 7 1" > ${DEV}
+echo "kbpress 9 7 0" > ${DEV}
+sleep ${TIME}
+echo "kbpress 9 7 1" > ${DEV}
+echo "kbpress 9 7 0" > ${DEV}
+sleep ${TIME}
+echo "kbpress 3 2 1" > ${DEV}
+echo "kbpress 3 2 0" > ${DEV}
+sleep ${TIME}
+echo "kbpress 11 4 1" > ${DEV}
+echo "kbpress 11 4 0" > ${DEV}
+sleep 4
+echo "kbpress 3 2 1" > ${DEV}
+echo "kbpress 3 2 0" > ${DEV}
+sleep ${TIME}
+echo "kbpress 2 7 1" > ${DEV}
+echo "kbpress 2 7 0" > ${DEV}
+sleep ${TIME}
+echo "kbpress 4 4 1" > ${DEV}
+echo "kbpress 4 4 0" > ${DEV}
+sleep ${TIME}
+echo "kbpress 3 2 1" > ${DEV}
+echo "kbpress 3 2 0" > ${DEV}
+sleep ${TIME}
+echo "kbpress 8 6 1" > ${DEV}
+echo "kbpress 8 6 0" > ${DEV}
+sleep ${TIME}
+echo "kbpress 8 6 1" > ${DEV}
+echo "kbpress 8 6 0" > ${DEV}
+sleep ${TIME}
+echo "kbpress 8 6 1" > ${DEV}
+echo "kbpress 8 6 0" > ${DEV}
+sleep ${TIME}
+echo "kbpress 8 6 1" > ${DEV}
+echo "kbpress 8 6 0" > ${DEV}
+sleep ${TIME}
+echo "kbpress 11 4 1" > ${DEV}
+echo "kbpress 11 4 0" > ${DEV}
+sleep 2
+echo "kbpress 3 7 1" > ${DEV}
+echo "kbpress 3 7 0" > ${DEV}
+sleep ${TIME}
+echo "kbpress 2 7 1" > ${DEV}
+echo "kbpress 2 7 0" > ${DEV}
+sleep ${TIME}
+echo "kbpress 3 0 1" > ${DEV}
+echo "kbpress 3 0 0" > ${DEV}
+sleep ${TIME}
+echo "kbpress 9 7 1" > ${DEV}
+echo "kbpress 9 7 0" > ${DEV}
+sleep ${TIME}
+echo "kbpress 9 7 1" > ${DEV}
+echo "kbpress 9 7 0" > ${DEV}
+sleep ${TIME}
+echo "kbpress 3 2 1" > ${DEV}
+echo "kbpress 3 2 0" > ${DEV}
+sleep ${TIME}
+echo "kbpress 11 4 1" > ${DEV}
+echo "kbpress 11 4 0" > ${DEV}

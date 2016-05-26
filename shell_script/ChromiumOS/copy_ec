@@ -1,0 +1,5 @@
+#!/bin/bash
+sudo cp ../../build/wheatley/ec.bin /build/glados/firmware/
+sudo cp ../../build/wheatley/RO/ec.RO.flat /build/glados/firmware/ec.RO.bin
+sudo cp ../../build/wheatley/RW/ec.RW.bin /build/glados/firmware/
+

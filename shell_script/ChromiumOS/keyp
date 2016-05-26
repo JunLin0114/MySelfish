@@ -1,0 +1,6 @@
+#!/bin/bash
+TIME=0.5
+DEV=/dev/pts/27
+echo "kbpress 0 2 1" > ${DEV}
+sleep ${TIME}
+echo "kbpress 0 2 0" > ${DEV}

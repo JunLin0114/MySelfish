@@ -1,0 +1,25 @@
+#!/bin/bash
+TTY=/dev/pts/29
+DELAY_IN_SEC=y
+while true
+do
+	echo "\n" > ${TTY}
+	echo "!" > ${TTY}
+	echo "idle" > ${TTY}
+    date
+    RANDOM_NUM=$RANDOM
+if [[ ${DELAY_IN_SEC} = y ]]; then
+    DELAY_INTVAL=6
+    DELAY_TIME=$((($RANDOM_NUM%${DELAY_INTVAL}+1)*20))
+else
+    DELAY_INTVAL=5
+    DELAY_TIME=$((($RANDOM_NUM%${DELAY_INTVAL}+1)*60))
+
+fi
+    echo "RANDOM_NUM=${RANDOM_NUM}"
+    echo "DELAY_TIME=${DELAY_TIME}"
+#    sleep ${DELAY_TIME}
+    sleep 20
+done
+    
+    

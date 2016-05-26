@@ -1,0 +1,10 @@
+#!/bin/bash
+if [ -z $1 ]; then
+  echo "Error: Board Name is not be specified!"
+  echo "Usage: ./build_img BOARD_NAME"
+else
+  BOARD_NAME=$1
+fi
+echo "Board is $BOARD_NAME"
+#./build_image --board=gldos --noenable_rootfs_verification -- enable_serial ttyS0 test
+# ./build_image --board=gldos --noenable_rootfs_verification -- enable_serial ttyS0 dev
