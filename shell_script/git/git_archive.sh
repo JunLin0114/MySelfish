@@ -38,8 +38,9 @@ git_archive () {
 	  return 0
     fi
     echo "Search Commit ID => $1 ........" 
-    git cat-file -e $1
-	if [ $? -ne 0 ]; then
+	type=$(git cat-file -t $1)
+	echo "type = ${type}"
+	if [ $? -ne 0 ] || [ "$type" != "commit" ]; then
 	  echo "  Not a Valid Commit ID! "
 	  echo "git_archive Fail!!!"
 	  return 1
